@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "llm-demo"
+version = "0.1.0"
+description = ""
+authors = ["Grzegorz Tężycki <grzegorz.tezycki@stxnext.pl>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["standard"], version = "^0.115.3"}
+pytest = "^8.3.3"
+flake8 = "^7.1.1"
+isort = "^5.13.2"
+black = "^24.10.0"
+mypy = "^1.13.0"
+pytest-cov = "^5.0.0"
+boto3 = "^1.35.47"
+boto3-stubs = "^1.35.46"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 110
+
+[tool.coverage.run]
+omit = [""]
