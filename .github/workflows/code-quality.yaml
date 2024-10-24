@@ -24,7 +24,7 @@ jobs:
         run: poetry run flake8
 
       - name: Lint by black
-        run black --check .
+        run: poetry run black --check .
 
       - name: Imports sorting by isort
         run: poetry run isort --check-only .
