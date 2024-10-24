@@ -1,0 +1,46 @@
+name: Flashcards CI/CD
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare Python Environment
+        uses: ./.github/actions/pyenv
+
+      - name: Lint by flake8
+        run: poetry run flake8
+
+      - name: Lint by black
+        run black --check .
+
+      - name: Imports sorting by isort
+        run: poetry run isort --check-only .
+
+      - name: Typing by mypy
+        run: poetry run mypy .
+
+  tests:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare Python Environment
+        uses: ./.github/actions/pyenv
+
+      - name: Test by invoke
+        run: poetry run pytest -vvs
