@@ -4,10 +4,10 @@ name: llm-demo CI/CD
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 
 jobs:
