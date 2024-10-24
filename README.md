@@ -13,8 +13,6 @@ fastapi dev --reload
 
     ./run-checks.sh
 
-
-
 # Tokenizer class
 You can change the tokenizer class by setting the following environment variable `LLM_TOKENIZER_CLASS`.
 
@@ -44,7 +42,6 @@ you can set the following environment variable:
 ```bash
 export LLM_TOKENIZER_CLASS=regex
 ```
-
 
 # Change the llm_service class:
 You can change the llm_service class by setting the following environment variable:
