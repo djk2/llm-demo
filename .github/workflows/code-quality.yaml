@@ -1,4 +1,4 @@
-name: Flashcards CI/CD
+name: llm-demo CI/CD
 
 on:
   push:
